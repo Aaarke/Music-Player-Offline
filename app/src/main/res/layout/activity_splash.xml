@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spotify_black"
+    tools:context=".Activity.SplashActivity">
+    <ImageView
+        android:id="@+id/ivHeadphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/headphones"
+        android:layout_above="@+id/tvAppname"
+
+        />
+    <TextView
+        android:id="@+id/tvAppname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/gopi_music_player"
+        android:textSize="@dimen/font_xxlarge"
+        android:textColor="@color/spotify_green"
+        />
+    <TextView
+        android:id="@+id/tvApptag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_tag_line"
+        android:layout_below="@+id/tvAppname"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white_50"
+
+        />
+
+</RelativeLayout>

@@ -1,0 +1,128 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="button_white_height">36.5dp</dimen>
+    <dimen name="button_white_radius">5.8dp</dimen>
+
+    <dimen name="add_task_header_height">67dp</dimen>
+
+    <dimen name="button_blue_height">57dp</dimen>
+    <dimen name="button_blue_radius">5.8dp</dimen>
+
+    <dimen name="button_corner_radius">3.3dp</dimen>
+    <dimen name="button_no_corner_radius">0dp</dimen>
+
+    <dimen name="header_text_size">20sp</dimen>
+    <dimen name="space_7">7dp</dimen>
+    <dimen name="space_9">9dp</dimen>
+    <dimen name="space_21">21dp</dimen>
+    <dimen name="space_19">19dp</dimen>
+
+    <dimen name="text_size_tiny">9sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_extra_large">20sp</dimen>
+    <dimen name="text_size_title_big">34sp</dimen>
+    <dimen name="text_size_xxx">46sp</dimen>
+    <dimen name="text_size_xl">24sp</dimen>
+    <dimen name="text_size_intermediate">13sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="availability_block_corner_radius">2dp</dimen>
+    <dimen name="dialog_corner_radius">3dp</dimen>
+
+    <dimen name="vehicle_type_dimen">50dp</dimen>
+
+
+    <dimen name="spacing_0">0dp</dimen>
+    <dimen name="spacing_1">1dp</dimen>
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_3">3dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_5">5dp</dimen>
+    <dimen name="spacing_6">6dp</dimen>
+    <dimen name="spacing_7">7dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_13">13dp</dimen>
+    <dimen name="spacing_27">27dp</dimen>
+    <dimen name="spacing_39">39dp</dimen>
+    <dimen name="spacing_42">42dp</dimen>
+
+    <!-- typical spacing between two views -->
+    <dimen name="spacing_huge">60dp</dimen>
+    <dimen name="spacing_xlarge">40dp</dimen>
+    <dimen name="spacing_very_large">30dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_normal">14dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_xsmall">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_very_tiny">2dp</dimen>
+    <dimen name="spacing_normal_17">17dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+
+    <dimen name="spacing_9">9dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="spacing_36">36dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_35">35dp</dimen>
+    <dimen name="spacing_128">180dp</dimen>
+    <dimen name="spacing_70">70dp</dimen>
+    <dimen name="spacing_80">80dp</dimen>
+    <dimen name="spacing_65">65dp</dimen>
+    <dimen name="spacing_66">66dp</dimen>
+    <dimen name="spacing_67">67dp</dimen>
+    <dimen name="spacing_68">68dp</dimen>
+    <dimen name="spacing_160">160dp</dimen>
+    <dimen name="spacing_45">45dp</dimen>
+
+    <!-- typical sizes of views -->
+    <dimen name="view_height_tall">60dp</dimen>
+    <dimen name="view_height_normal">40dp</dimen>
+    <dimen name="view_height_short">35dp</dimen>
+    <dimen name="view_height_small">24dp</dimen>
+    <dimen name="view_height_xsmall">14dp</dimen>
+    <dimen name="view_height_xxsmall">10dp</dimen>
+    <dimen name="view_height_tiny">8dp</dimen>
+    <dimen name="view_height_very_tiny">3dp</dimen>
+    <dimen name="background_height">107dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="font_xxxlarge">30sp</dimen>
+    <dimen name="font_xxlarge">24sp</dimen>
+    <dimen name="font_27">27sp</dimen>
+    <dimen name="font_xlarge">20sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_xsmall">10sp</dimen>
+    <dimen name="font_normal_15">15sp</dimen>
+    <dimen name="font_6">6sp</dimen>
+    <dimen name="font_4">4sp</dimen>
+
+    <!--======================Material EditText default dimensions=====================-->
+    <dimen name="default_padding_top">8dp</dimen>
+    <dimen name="default_padding_bottom">8dp</dimen>
+    <dimen name="inner_padding_left">0dp</dimen>
+    <dimen name="inner_padding_right">0dp</dimen>
+    <dimen name="floating_label_text_size">12sp</dimen>
+    <dimen name="bottom_text_size">12sp</dimen>
+    <dimen name="inner_components_spacing">8dp</dimen>
+    <dimen name="bottom_ellipsis_height">4dp</dimen>
+    <dimen name="post_image_height">200dp</dimen>
+    <dimen name="empty_nav_view_height">25dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="spacing_54">54dp</dimen>
+    <dimen name="custom_field_padding">7dp</dimen>
+    <dimen name="spacing_52">52dp</dimen>
+    <dimen name="spacing_240">240dp</dimen>
+
+    <dimen name="progress_bar_size">30dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+
+
+</resources>

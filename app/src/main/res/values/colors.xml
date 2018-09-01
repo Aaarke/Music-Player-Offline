@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_main_bg_color">#fff</color>
+    <color name="colorPrimary">#4695f6</color>
+    <color name="colorPrimary_30">#4D4695f6</color>
+    <color name="colorPrimary_60">#E64695f6</color>
+    <color name="colorPrimaryDark">#F94695f6</color>
+    <!--<color name="colorPrimaryDark">#2196F3</color>-->
+    <color name="colorAccent">#4695f6</color>
+
+    <color name="status_bar_color">#000000</color>
+    <color name="colorLauncherScreens">#FFFFFF</color>
+    <color name="header_text_color">#fff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_30">#4Dffffff</color>
+    <color name="colorLauncherScreenText">#474747</color>
+    <color name="colorDividerLine">#dbdbdb</color>
+    <color name="fb_btn_color_normal">#3b5998</color>
+    <color name="fb_btn_color_pressed">#4E69A2</color>
+    <color name="app_text_color">#FFFFFF</color>
+    <color name="google_btn_color_normal">#db402c</color>
+    <color name="google_btn_color_pressed">#DE5341</color>
+    <color name="transparent">#0000</color>
+
+    <color name="medium_grey">#acaba9</color>
+
+    <color name="colorHint">#b2b2b2</color>
+    <color name="launcher_screen_btn_color_normal">#4695f6</color>
+    <color name="launcher_screen_btn_color_pressed">#B64695f6</color>
+    <!--<color name="launcher_screen_btn_color_pressed">#6BAAF7</color>-->
+    <color name="black">#000000</color>
+    <color name="accent">#4695F6</color>
+    <color name="accent_55">#664695F6</color>
+
+
+    <color name="edit_text_line_color">#dbdbdb</color>
+    <color name="snackbar_bg_color">#e6e2574c</color>
+    <color name="snackbar_bg_color_success">#e666d02a</color>
+    <color name="colorPickupDeliveryHeader">#FAFAFA</color>
+    <color name="colorRed">#e2574c</color>
+    <color name="light_black">#a9a9a9</color>
+    <color name="side_menu_horizontal_view">#e5e5e5</color>
+    <color name="add_task_header_border">#1e000000</color>
+    <color name="seekbar_color">#d81b60</color>
+
+    <!-- splash screen-->
+    <color name="splash_text_color">#1d1d21</color>
+
+    <!-- login screen-->
+    <color name="login_tv_login">#40000000</color>
+
+
+    <!--edit text color -->
+    <color name="edit_text_hint_color">#a9a9a9</color>
+    <color name="edit_text_floating_label_color">#a9a9a9</color>
+    <color name="edit_text_underline_color">#26000000</color>
+
+    <!--Status Codes-->
+    <color name="status_unassigned">#dbdbdb</color>
+    <color name="status_declined">#999999</color>
+    <color name="status_assigned">#f5a946</color>
+    <color name="status_accepted">#BA68C8</color>
+    <color name="status_acknowledged">#BA68C8</color>
+    <color name="status_started">#2196F3</color>
+    <color name="status_arrived">#3F51BF</color>
+    <color name="status_successful">#66d02a</color>
+    <color name="status_failed">#e2574c</color>
+    <!--<color name="status_canceled">#bfbfbf</color>-->
+    <color name="status_canceled">#e2574c</color>
+    <color name="status_in_progress">#166bd3</color>
+
+
+    <color name="unassigned_dashboard">#f25050</color>
+
+    <color name="colorLabel">#929292</color>
+    <color name="skip_background_color">#CC474747</color>
+    <color name="skip_background_color_pressed">#F2474747</color>
+    <color name="colorPath">#4695f5</color>
+    <color name="bottom_bar_color">#f9f9f9</color>
+    <color name="separator_color">#33979797</color>
+
+    <color name="selected_item_tabview">#E5E5E5</color>
+    <color name="side_menu_bg_color">#FAFAFA</color>
+    <color name="side_menu_text_color">#000</color>
+
+    <color name="white_two">#FBFBFB</color>
+    <color name="button_color_background">#2496ff</color>
+    <color name="button_color_grey_background">#dadada</color>
+
+
+    <!-- agent statuses -->
+    <color name="agent_status_online">#66d02a</color>
+    <color name="agent_status_busy">#166bd3</color>
+    <color name="agent_status_offline">#f5a946</color>
+    <color name="switch_off_color">#e2e4e6</color>
+
+
+    <color name="black_90">#E6000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_25">#40000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_15">#19000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="black_05">#0D000000</color>
+    <color name="black_04">#0C000000</color>
+    <color name="black_02">#05000000</color>
+    <color name="blue_24">#2496ff</color>
+    <color name="darker_gray">#aaa</color>
+    <!-- SignUp Screen-->
+
+    <color name="try_tookan">#4d4d4f</color>
+    <color name="text_color_hint">#c7c6c6</color>
+    <color name="term_and_condi">#6c6c70</color>
+    <color name="step_color">#0091ff</color>
+    <color name="resend_color">#1baf4e</color>
+
+
+    <color name="white_100">#FFFFFF</color>
+    <color name="black_100">#000000</color>
+    <color name="number_color">#333333</color>
+    <color name="rounded_border_color">#979797</color>
+    <color name="ratingbar_star_color">#f8e81c</color>
+
+    <color name="grey_light">#aaaaaa</color>`
+    <color name="grey_background">#efefef</color>
+    <color name="spotify_green">#1db954</color>
+    <color name="spotify_black">#191414</color>
+    <color name="btn_back">#212121</color>
+</resources>
