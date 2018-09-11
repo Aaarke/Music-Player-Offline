@@ -14,17 +14,28 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.SeekBar
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.asus.gopimusicplayer.Interface.RequestCode
 import com.example.asus.gopimusicplayer.Models.SongInfoModel
 import com.example.asus.gopimusicplayer.R
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.song_ticket.*
 import kotlinx.android.synthetic.main.song_ticket.view.*
+import android.content.ContentUris
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import com.example.asus.gopimusicplayer.Adapter.MysongAdapter
+import com.example.asus.gopimusicplayer.PlayerConstants
+
 
 class HomeActivity : AppCompatActivity() {
     private var listSongs = ArrayList<SongInfoModel>()
     private var adapter: MysongAdapter? = null
     private var mp: MediaPlayer? = null
     private lateinit var sbMusicProgress: SeekBar
+    private lateinit var rvListSong:RecyclerView
+    lateinit var mLayoutManager: android.support.v7.widget.LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -40,6 +51,8 @@ class HomeActivity : AppCompatActivity() {
      * */
     private fun initView() {
         sbMusicProgress = findViewById(R.id.sbMusicProgress)
+        //ivArtist=findViewById(R.id.ivArtist)
+        rvListSong=findViewById(R.id.rvListSong)
     }
 
     /**
@@ -79,73 +92,90 @@ class HomeActivity : AppCompatActivity() {
         val selection: String = MediaStore.Audio.Media.IS_MUSIC + "!=0"
         val cursor: Cursor = contentResolver.query(allSongUri, null, selection, null, null)
         if (cursor != null) {
-            if (cursor!!.moveToFirst()) {
+            if (cursor.moveToFirst()) {
                 do {
-                    val songUrl: String = cursor!!.getString(cursor!!.getColumnIndex(MediaStore.Audio.Media.DATA))
-                    val songAuthor: String = cursor!!.getString(cursor!!.getColumnIndex(MediaStore.Audio.Media.ARTIST))
-                    val songName: String = cursor!!.getString(cursor!!.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME))
-                    listSongs.add(SongInfoModel(songName,songAuthor,songUrl))
+                    val songUrl: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
+                    val songAuthor: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
+                    val songName: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME))
+                    val albumId:Long=cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID))
+                    listSongs.add(SongInfoModel(songName,songAuthor,songUrl,albumId))
 
 
-                } while (cursor!!.moveToNext())
+                } while (cursor.moveToNext())
 
             }
         }
-        cursor!!.close()
-        adapter = MysongAdapter(listSongs)
-        lvListSong.adapter = adapter
+        cursor.close()
+        mLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        rvListSong.layoutManager=mLayoutManager
+        adapter = MysongAdapter(listSongs,this)
+        rvListSong.adapter = adapter
     }
 
     /**
      * ================================================Inner class of Song Adapter==============================================================================================
      * */
-    inner class MysongAdapter : BaseAdapter {
-        var myListSong = ArrayList<SongInfoModel>()
-
-        constructor(myListSong: ArrayList<SongInfoModel>) : super() {
-            this.myListSong = myListSong
-        }
-
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val myView: View = layoutInflater.inflate(R.layout.song_ticket, null)
-            val song: SongInfoModel = this.myListSong[position]
-            myView.tvSongName.text = song.title
-            myView.tvAuthorName.text = song.author
-            myView.btnPlay.setOnClickListener(View.OnClickListener {
-                mp = MediaPlayer()
-                if (myView.btnPlay.text == "Stop") {
-                    mp!!.stop()
-                    myView.btnPlay.text = "Play"
-
-                } else {
-                    try {
-                        mp!!.setDataSource(song.songUrl)
-                        mp!!.prepare()
-                        mp!!.start()
-                        myView.btnPlay.text = "Stop"
-                        sbMusicProgress.max = mp!!.duration
-                    } catch (e: Exception) {
-
-                    }
-                }
-
-            })
-            return myView
-        }
-
-        override fun getItem(position: Int): Any {
-            return this.myListSong[position]
-        }
-
-        override fun getItemId(position: Int): Long {
-            return position.toLong()
-        }
-
-        override fun getCount(): Int {
-            return this.myListSong.size
-        }
-
-    }
+//    inner class MysongAdapter(listSongs:ArrayList<SongInfoModel>) : RecyclerView.Adapter<MysongAdapter.MyViewHolder>() {
+//
+//
+////        var myListSong = ArrayList<SongInfoModel>()
+////
+////        constructor(myListSong: ArrayList<SongInfoModel>) : super() {
+////            this.myListSong = myListSong
+////        }
+////
+////        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+////            val myView: View = layoutInflater.inflate(R.layout.song_ticket, null)
+////            val song: SongInfoModel = this.myListSong[position]
+////            myView.tvSongName.text = song.title
+////            myView.tvAuthorName.text = song.author
+////            try {
+//////                var uri:Uri =
+//////                       )
+////
+////                Glide.with(applicationContext).load( ContentUris.withAppendedId(PlayerConstants.sArtworkUri, myListSong.get(position).albumID!!))
+////                        .placeholder(R.drawable.music_player)
+////                        .error(R.drawable.music_player)
+////                        .into(ivArtist)
+////            }catch (e:Exception){
+////                e.printStackTrace()
+////            }
+//
+////            myView.btnPlay.setOnClickListener(View.OnClickListener {
+////                mp = MediaPlayer()
+////                if (myView.btnPlay.text == "Stop") {
+////                    mp!!.stop()
+////                    myView.btnPlay.text = "Play"
+////
+////                } else {
+////                    try {
+////                        mp!!.setDataSource(song.songUrl)
+////                        mp!!.prepare()
+////                        mp!!.start()
+////                        myView.btnPlay.text = "Stop"
+////                        sbMusicProgress.max = mp!!.duration
+////                    } catch (e: Exception) {
+////
+////                    }
+////                }
+////
+//////            })
+////            return myView
+////        }
+////
+////        override fun getItem(position: Int): Any {
+////            return this.myListSong[position]
+////        }
+////
+////        override fun getItemId(position: Int): Long {
+////            return position.toLong()
+////        }
+////
+////        override fun getCount(): Int {
+////            return this.myListSong.size
+////        }
+//
+//    }
 
     /**
      * ================================================Inner class to run song in background ==============================================================================================
@@ -167,6 +197,8 @@ class HomeActivity : AppCompatActivity() {
 
         }
     }
+
+
 
 
 }

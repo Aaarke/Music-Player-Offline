@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_main_bg_color">#fff</color>
-    <color name="colorPrimary">#4695f6</color>
-    <color name="colorPrimary_30">#4D4695f6</color>
-    <color name="colorPrimary_60">#E64695f6</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimary_30">#ffffff</color>
+    <color name="colorPrimary_60">#ffffff</color>
     <color name="colorPrimaryDark">#F94695f6</color>
     <!--<color name="colorPrimaryDark">#2196F3</color>-->
     <color name="colorAccent">#4695f6</color>
@@ -113,7 +113,7 @@
     <color name="darker_gray">#aaa</color>
     <!-- SignUp Screen-->
 
-    <color name="try_tookan">#4d4d4f</color>
+    <color name="grey_art">#4d4d4f</color>
     <color name="text_color_hint">#c7c6c6</color>
     <color name="term_and_condi">#6c6c70</color>
     <color name="step_color">#0091ff</color>

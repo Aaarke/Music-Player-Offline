@@ -15,6 +15,10 @@
     <dimen name="space_7">7dp</dimen>
     <dimen name="space_9">9dp</dimen>
     <dimen name="space_21">21dp</dimen>
+    <dimen name="space_25">25dp</dimen>
+    <dimen name="space_26">26dp</dimen>
+    <dimen name="space_30">30dp</dimen>
+
     <dimen name="space_19">19dp</dimen>
 
     <dimen name="text_size_tiny">9sp</dimen>
