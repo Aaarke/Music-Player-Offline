@@ -4,9 +4,9 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimary_30">#ffffff</color>
     <color name="colorPrimary_60">#ffffff</color>
-    <color name="colorPrimaryDark">#F94695f6</color>
+    <color name="colorPrimaryDark">#000000</color>
     <!--<color name="colorPrimaryDark">#2196F3</color>-->
-    <color name="colorAccent">#4695f6</color>
+    <color name="colorAccent">#000000</color>
 
     <color name="status_bar_color">#000000</color>
     <color name="colorLauncherScreens">#FFFFFF</color>
@@ -131,4 +131,6 @@
     <color name="spotify_green">#1db954</color>
     <color name="spotify_black">#191414</color>
     <color name="btn_back">#212121</color>
+    <color name="colorDekraYellow">#fbc02d</color>
+    <color name="colorDekraOrange">#f9a825</color>
 </resources>

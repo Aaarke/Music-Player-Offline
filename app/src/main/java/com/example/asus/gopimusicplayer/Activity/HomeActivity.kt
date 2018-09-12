@@ -9,33 +9,27 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
-import android.view.View
-import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.SeekBar
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.example.asus.gopimusicplayer.Interface.RequestCode
 import com.example.asus.gopimusicplayer.Models.SongInfoModel
 import com.example.asus.gopimusicplayer.R
-import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.song_ticket.*
-import kotlinx.android.synthetic.main.song_ticket.view.*
-import android.content.ContentUris
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.asus.gopimusicplayer.Adapter.MysongAdapter
-import com.example.asus.gopimusicplayer.PlayerConstants
+import com.example.asus.gopimusicplayer.Adapter.RecentlyHeardAdapter
 
 
 class HomeActivity : AppCompatActivity() {
     private var listSongs = ArrayList<SongInfoModel>()
     private var adapter: MysongAdapter? = null
+    private var recentlyHeardAdapter:RecentlyHeardAdapter?=null
     private var mp: MediaPlayer? = null
     private lateinit var sbMusicProgress: SeekBar
     private lateinit var rvListSong:RecyclerView
+    private lateinit var rvRecentlyHeard:RecyclerView
     lateinit var mLayoutManager: android.support.v7.widget.LinearLayoutManager
+    lateinit var mLayoutManagerRecentAddedSong: android.support.v7.widget.LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -50,9 +44,10 @@ class HomeActivity : AppCompatActivity() {
      * ================================================Function used to initialize view==================================================================================================
      * */
     private fun initView() {
-        sbMusicProgress = findViewById(R.id.sbMusicProgress)
+//        sbMusicProgress = findViewById(R.id.sbMusicProgress)
         //ivArtist=findViewById(R.id.ivArtist)
         rvListSong=findViewById(R.id.rvListSong)
+        rvRecentlyHeard=findViewById(R.id.rvRecentHeardSong)
     }
 
     /**
@@ -66,6 +61,32 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         loadMusicFromLocal()
+        loadRecentPlayedMusic()
+    }
+
+    private fun loadRecentPlayedMusic(){
+        val allSongUri: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val selection: String = MediaStore.Audio.Media.IS_MUSIC + "!=0"
+        val cursor: Cursor = contentResolver.query(allSongUri, null, selection, null, null)
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    val songUrl: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
+                    val songAuthor: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
+                    val songName: String = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME))
+                    val albumId:Long=cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID))
+                    listSongs.add(SongInfoModel(songName,songAuthor,songUrl,albumId))
+
+
+                } while (cursor.moveToNext())
+
+            }
+        }
+        cursor.close()
+        mLayoutManagerRecentAddedSong = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        rvRecentlyHeard.layoutManager=mLayoutManagerRecentAddedSong
+        recentlyHeardAdapter = RecentlyHeardAdapter(listSongs,this)
+        rvRecentlyHeard.adapter = recentlyHeardAdapter
     }
 
     /**
@@ -190,7 +211,7 @@ class HomeActivity : AppCompatActivity() {
                 }
                 runOnUiThread {
                     if (mp != null) {
-                        sbMusicProgress.progress = mp!!.currentPosition
+//                        sbMusicProgress.progress = mp!!.currentPosition
                     }
                 }
             }

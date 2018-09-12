@@ -13,4 +13,7 @@
     <string name="hamari_aduri_kahani_mp3">Hamari aduri kahani.mp3</string>
     <string name="artist">Ankit vishnoi</string>
     <string name="song">Songs</string>
+    <string name="all_songs">All Songs</string>
+    <string name="recently_heard">Recently Heard</string>
+    <string name="blended_family">Blended Family</string>
 </resources>
