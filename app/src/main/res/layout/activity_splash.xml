@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/headphones"
+        android:src="@drawable/headphn"
         android:layout_above="@+id/tvAppname"
 
         />
@@ -35,7 +35,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textColor="@color/white_50"
-
         />
 
 </RelativeLayout>

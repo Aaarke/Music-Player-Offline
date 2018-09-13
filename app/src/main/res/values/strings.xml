@@ -16,4 +16,6 @@
     <string name="all_songs">All Songs</string>
     <string name="recently_heard">Recently Heard</string>
     <string name="blended_family">Blended Family</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="drake">Drake</string>
 </resources>

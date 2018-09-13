@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="#424242"
-        >
+        android:layout_height="90dp"
+        android:background="#424242">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivbottomArtist"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_above="@+id/seekBar_luminosite"
             android:layout_marginBottom="@dimen/spacing_12"
-            android:layout_marginStart="@dimen/spacing_12" />
-        <SeekBar android:id="@+id/seekBar_luminosite"
+            android:layout_marginStart="@dimen/spacing_12"
+            android:layout_marginTop="@dimen/spacing_8" />
+
+        <SeekBar
+            android:id="@+id/seekBar_luminosite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/spacing_8"
             android:progress="50"
             android:progressDrawable="@drawable/seekbar_style"
-            android:thumb="@drawable/custom_thumb"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/spacing_12"
-            />
+            android:thumb="@drawable/custom_thumb" />
+
         <RelativeLayout
             android:id="@+id/rlSong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/seekBar_luminosite"
             android:layout_marginBottom="@dimen/space_18"
-            android:layout_toRightOf="@+id/ivbottomArtist"
-            android:layout_toEndOf="@+id/ivbottomArtist"
             android:layout_marginLeft="@dimen/spacing_8"
+            android:layout_toEndOf="@+id/ivbottomArtist"
+            android:layout_toRightOf="@+id/ivbottomArtist"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,55 +51,60 @@
                     android:id="@+id/tvSongName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:maxLength="21"
                     android:maxLines="1"
                     android:text="@string/hamari_aduri_kahani_mp3"
-                    android:layout_gravity="center_vertical"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/text_size_extra_large" />
+                    android:textSize="@dimen/text_size_extra_large"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvAuthorName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/artist"
                     android:layout_gravity="center_vertical"
+                    android:text="@string/artist"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_large" />
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/ivPlay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_18"
+                android:layout_marginLeft="@dimen/spacing_8"
                 android:layout_marginRight="@dimen/spacing_18"
                 android:layout_toLeftOf="@+id/ivMenu"
-                android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/ivMenu"
-                android:layout_marginLeft="@dimen/spacing_8"
+                android:layout_marginTop="@dimen/spacing_24"
                 android:src="@drawable/play_button"
-                android:visibility="gone" />
+                android:visibility="visible" />
+
             <ImageView
                 android:id="@+id/ivPause"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_18"
-                android:layout_marginRight="@dimen/spacing_18"
-                android:layout_toLeftOf="@+id/ivMenu"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/ivMenu"
                 android:layout_marginLeft="@dimen/spacing_8"
+                android:layout_marginRight="@dimen/spacing_18"
+                android:layout_marginTop="@dimen/spacing_24"
+                android:layout_toLeftOf="@+id/ivMenu"
+                android:layout_toStartOf="@+id/ivMenu"
                 android:src="@drawable/pause_"
-                android:visibility="visible" />
-
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/ivMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/spacing_4"
                 android:layout_marginRight="@dimen/spacing_4"
+                android:layout_marginTop="@dimen/spacing_24"
                 android:src="@drawable/white_menu"
 
                 />

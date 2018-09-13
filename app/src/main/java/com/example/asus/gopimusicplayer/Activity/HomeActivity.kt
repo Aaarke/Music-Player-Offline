@@ -16,11 +16,15 @@ import com.example.asus.gopimusicplayer.Models.SongInfoModel
 import com.example.asus.gopimusicplayer.R
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import com.example.asus.gopimusicplayer.Adapter.MysongAdapter
 import com.example.asus.gopimusicplayer.Adapter.RecentlyHeardAdapter
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), View.OnClickListener {
+
     private var listSongs = ArrayList<SongInfoModel>()
     private var adapter: MysongAdapter? = null
     private var recentlyHeardAdapter:RecentlyHeardAdapter?=null
@@ -30,10 +34,13 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var rvRecentlyHeard:RecyclerView
     lateinit var mLayoutManager: android.support.v7.widget.LinearLayoutManager
     lateinit var mLayoutManagerRecentAddedSong: android.support.v7.widget.LinearLayoutManager
+    lateinit var ivPlay:ImageView
+    lateinit var ivPause:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         initView()
+        setClickListeners()
         //loadUrlOnline()
         checkPermissions()
         var myTrack = TrackSong()
@@ -48,6 +55,16 @@ class HomeActivity : AppCompatActivity() {
         //ivArtist=findViewById(R.id.ivArtist)
         rvListSong=findViewById(R.id.rvListSong)
         rvRecentlyHeard=findViewById(R.id.rvRecentHeardSong)
+        ivPause=findViewById(R.id.ivPause)
+        ivPlay=findViewById(R.id.ivPlay)
+    }
+
+    /**
+     * ================================================Function used to set on click listeners on view==================================================================================================
+     * */
+    private fun setClickListeners(){
+        ivPlay.setOnClickListener(this)
+        ivPause.setOnClickListener(this)
     }
 
     /**
@@ -219,6 +236,20 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    override fun onClick(view: View?) {
+        when(view?.id){
+            R.id.ivPlay->{
+                ivPlay.visibility=View.GONE
+                ivPause.visibility=View.VISIBLE
+            }
+            R.id.ivPause->{
+                ivPause.visibility=View.GONE
+                ivPlay.visibility=View.VISIBLE
+            }
+
+        }
+
+    }
 
 
 

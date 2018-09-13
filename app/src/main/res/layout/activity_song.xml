@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SongActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarsong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvNowPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/now_playing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/spacing_24" />
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/llcross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarsong"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_18">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/letter_x" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCircularArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llcross"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_32">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSongAndArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/llCircularArtist"
+        android:layout_marginTop="@dimen/spacing_8"
+        android:layout_centerHorizontal="true"
+        >
+
+        <TextView
+            android:id="@+id/tvArtistSongActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/blended_family"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/spacing_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/drake"
+            android:textColor="@color/grey_art"
+            android:textSize="20sp"
+            android:layout_marginLeft="45dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

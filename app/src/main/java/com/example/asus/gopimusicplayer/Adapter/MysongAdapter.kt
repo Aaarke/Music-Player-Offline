@@ -1,5 +1,7 @@
 package com.example.asus.gopimusicplayer.Adapter
 
+import android.app.FragmentManager
+import android.app.FragmentTransaction
 import android.content.ContentUris
 import android.content.Context
 import android.graphics.Bitmap
@@ -15,6 +17,7 @@ import android.view.animation.Animation
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.example.asus.gopimusicplayer.Fragments.FragmentSong
 import com.example.asus.gopimusicplayer.Models.SongInfoModel
 import com.example.asus.gopimusicplayer.PlayerConstants
 import com.example.asus.gopimusicplayer.R
@@ -38,6 +41,11 @@ class MysongAdapter(mySongList: ArrayList<SongInfoModel>, mContext: Context) : R
         val posi: Int = holder.adapterPosition
         holder.tvSongName.text=mySongList[posi].title
         holder.tvAuthorName.text=mySongList[posi].author
+        holder.itemView.setOnClickListener(object:View.OnClickListener{
+            override fun onClick(view: View?) {
+                openSongActivity()
+            }
+        })
 
         try {
             Glide.with(mContext).load(ContentUris.withAppendedId(PlayerConstants.sArtworkUri, mySongList[posi].albumID!!)).asBitmap().centerCrop().placeholder(ContextCompat.getDrawable(mContext, R.drawable.music_player))
@@ -65,6 +73,11 @@ class MysongAdapter(mySongList: ArrayList<SongInfoModel>, mContext: Context) : R
             this.tvSongName = itemView.findViewById(R.id.tvSongName)
             this.ivArtist=itemView.findViewById(R.id.ivArtist)
         }
+    }
+
+
+    private fun openSongActivity(){
+
     }
 
 }
