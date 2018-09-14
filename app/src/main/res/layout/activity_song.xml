@@ -78,4 +78,53 @@
             android:layout_marginLeft="45dp"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llSongButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/spacing_80"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/ivPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginRight="@dimen/spacing_27"
+            android:layout_marginEnd="@dimen/font_27"
+            android:src="@drawable/if_003___rewind_2949785"
+            />
+        <ImageView
+            android:id="@+id/ivSongPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/if_001___play_2949783"
+            android:visibility="visible"
+            />
+        <ImageView
+            android:id="@+id/ivSongPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/if_004___pause_2949786"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/if_002___fast_forward_2949784"
+            android:layout_marginLeft="@dimen/spacing_27"
+            android:layout_marginStart="@dimen/font_27"
+            />
+
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/seekBar_luminosite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/seekbar_style"
+        android:thumb="@drawable/custom_thumb" />
 </RelativeLayout>
